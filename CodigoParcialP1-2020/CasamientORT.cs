@@ -40,6 +40,8 @@ public class CasamientORT
                 }
             }
         }
+
+        return clientesBuscados;
     }
 
     public Servicio BuscarServicio(string nombreServicio)
@@ -47,10 +49,26 @@ public class CasamientORT
         Servicio unServicio = new Servicio();
         foreach (Servicio s in listaServicios)
         {
-            if (s.nombre == nombreServicio)
+            if (s.Nombre == nombreServicio)
             {
                 unServicio = s;
             }
         }
     }
+
+
+    // PARTE C
+
+    public double ImporteTotalDeTodasLasFiestasClientesReferentes(){
+        double importeTotal=0;
+        foreach(Fiesta f in listaFiestas){
+            if(f.UnCliente.EsReferente){
+                importeTotal+= f.CostoTotal();
+            }
+        }
+        return importeTotal;
+    }
+
+
+
 }
