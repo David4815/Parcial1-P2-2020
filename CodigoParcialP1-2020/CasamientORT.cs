@@ -1,6 +1,7 @@
 public class CasamientORT
 {
     // PARTE A)
+
     public List<Cliente> ClientesConMenosFiestas()
     {
         List<Cliente> clientesBuscados = new List<Cliente>();
@@ -8,13 +9,13 @@ public class CasamientORT
 
         foreach (Cliente cli in listaClientes)
         {
-            if (cli.fiestas.Count() < menorCantidadFiestas)
+            if (cli.Fiestas.Count() < menorCantidadFiestas)
             {
                 clientesBuscados.Clear();
                 clientesBuscados.Add (cli);
-                menorCantidadFiestas = cli.fiestas.Count();
+                menorCantidadFiestas = cli.Fiestas.Count();
             }
-            else if (cli.fiestas.Count() == menorCantidadFiestas)
+            else if (cli.Fiestas.Count() == menorCantidadFiestas)
             {
                 clientesBuscados.Add (cli);
             }
@@ -24,6 +25,9 @@ public class CasamientORT
     }
 
     // PARTE B)
+    // Otra forma podria habar sido agregando una listaDeClientes en la clase servicio
+    // buscando el servicion con la funcion BuscarServicio
+    // y recorrer la listaDeClientes del servicio buscado
     public List<Cliente> ClientesQueContrataronUnServicio(string nombreServicio)
     {
         List<Cliente> clientesBuscados = new List<Cliente>();
@@ -60,7 +64,7 @@ public class CasamientORT
     // PARTE C
 
     public double ImporteTotalDeTodasLasFiestasClientesReferentes(){
-        double importeTotal=0;
+        double importeTotal=0.0;
         foreach(Fiesta f in listaFiestas){
             if(f.UnCliente.EsReferente){
                 importeTotal+= f.CostoTotal();

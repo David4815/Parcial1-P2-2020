@@ -1,33 +1,19 @@
-public class Fiesta{
+public class Fiesta
+{
+    public double CostoTotal()
+    {
+        double costo = cantidadPersonas * servicios.Count();
+       
+        foreach (Servicio s in servicios)
+        {
+            costo += s.Costo();
+        }
 
-public double CostoTotal(){
-
-    double costo=cantidadPersonas * servicios.Count();
-     if(unCliente.esReferente){
-         costo*= 0.95;
-     }
-     foreach(Servicio s in servicios){
-         costo+=s.Costo();
-     }
-
-    return costo;
+         if (unCliente.EsReferente)
+        {
+            costo *= 0.95;
+        }
+        return costo;
+    }
 }
 
-}
-
-
-// public class Fiesta{
-
-// public double CostoTotal(){
-
-//     double costo=cantidadPersonas * servicios.Count();
-//     if(unCliente.esReferente){
-//         costo*= 0.95;
-//     }
-
-//     costo+= 
-
-//     return costo;
-// }
-
-// }
