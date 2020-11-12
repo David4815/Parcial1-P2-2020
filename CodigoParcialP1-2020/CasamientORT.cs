@@ -19,11 +19,38 @@ public class CasamientORT
                 clientesBuscados.Add (cli);
             }
         }
-        
+
         return clientesBuscados;
     }
 
+    // PARTE B)
+    public List<Cliente> ClientesQueContrataronUnServicio(string nombreServicio)
+    {
+        List<Cliente> clientesBuscados = new List<Cliente>();
+        foreach (Cliente cli in listaClientes)
+        {
+            foreach (Fiesta f in cli.Fiestas)
+            {
+                foreach (Servicio s in f.Servicios)
+                {
+                    if (s = BuscarServicio(nombreServicio) && !clientesBuscados.Contains(cli))
+                    {
+                        clientesBuscados.Add (cli);
+                    }
+                }
+            }
+        }
+    }
 
-
-
+    public Servicio BuscarServicio(string nombreServicio)
+    {
+        Servicio unServicio = new Servicio();
+        foreach (Servicio s in listaServicios)
+        {
+            if (s.nombre == nombreServicio)
+            {
+                unServicio = s;
+            }
+        }
+    }
 }

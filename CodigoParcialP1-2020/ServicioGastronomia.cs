@@ -5,9 +5,9 @@ public class ServicioGastronomia : Servicio
         double costo=0;
         
         if(esDeBebidasAlcoholicas){
-            costo=500
+            costo=1891;
         }
-        
+
         return costo;
     }
 }
